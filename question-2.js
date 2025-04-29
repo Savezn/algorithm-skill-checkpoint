@@ -1,5 +1,23 @@
-function findProductPrice(products, name) {
+function findProductPrice(products, targetName) {
   // Your code here
+  // find target index by binary search
+  let left = 0;
+  let right = products.length - 1;
+
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (products[mid].name === targetName) {
+      // return the price of the product with the given name
+      return products[mid].price;
+    } else if (products[mid].name < targetName) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+
+  // return -1 if no product with the given name is found
+  return -1
 }
 
 // Test case

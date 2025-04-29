@@ -1,5 +1,19 @@
-function findStudentById(students, id) {
+function findStudentById(students, targetId) {
   // Your code here
+  console.log(targetId); // check targetId
+
+  // Loop
+  for (let i = 0; i < students.length; i++) {
+    console.log(students[i].id); // check for each student id
+    
+    // check if student id = id
+    if (students[i].id === targetId) {
+      return students[i]
+    }
+  }
+
+  // return null if target students id
+  return null
 }
 
 // Test case
